@@ -1,0 +1,14 @@
+import 'package:material_ui/material_ui.dart';
+
+class SnackBarHelper {
+  static void show(BuildContext context, String message, {bool isError = true}) {
+    ScaffoldMessenger.of(context).showSnackBar(
+      SnackBar(
+        content: Text(message),
+        backgroundColor: isError ? Colors.red : Colors.green,
+        behavior: SnackBarBehavior.floating, // Membuat snackbar melayang rapi
+        duration: const Duration(seconds: 3),
+      ),
+    );
+  }
+}
